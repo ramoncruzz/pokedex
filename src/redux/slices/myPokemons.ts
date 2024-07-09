@@ -30,9 +30,11 @@ export const pokemonSlice = createSlice({
   initialState,
   reducers: {
     capturePokemon : (state, action:PayloadAction<PokemonItem>)=>{
-        if(!state.myPokemons.find(item=> item.name === action.payload.name))
-            state.pokemons.push(action.payload)
-    }
+        
+        if(!state.myPokemons.some(item=> item.name === action.payload.name))
+                state.myPokemons.push(action.payload)
+            
+    },
   },
   extraReducers: ((builder)=>{
     builder.addCase(fecthPokemons.fulfilled, (state, action)=>{

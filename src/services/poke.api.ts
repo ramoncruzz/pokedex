@@ -10,7 +10,7 @@ export const search = (params?: PokemonRequestParams): Promise <PokemonResponseA
 });
 
 export const detail = (id: number): Promise <Pokemon> => new Promise ((resolve, reject) => {
-    service.get<Pokemon>("pokemon",{params: {id} } )
+    service.get<Pokemon>(`pokemon/${id}`)
         .then(response=>resolve(response.data))
         .catch(error=> reject(error))
 });

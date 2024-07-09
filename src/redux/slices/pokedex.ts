@@ -5,14 +5,14 @@ import { Pokemon } from '../../utils/types'
 import { RootState } from '../store';
 export interface PokeDexState {
   cache: Pokemon[],
-  pokemon?: Pokemon,
+  pokemonDetail?: Pokemon,
   loading: boolean,
   error?: string
 }
 
 const initialState: PokeDexState = {
   cache: [],
-  pokemon: undefined,
+  pokemonDetail: undefined,
   loading: false,
   error: undefined,
   
@@ -21,11 +21,12 @@ const initialState: PokeDexState = {
 export const getDetailPokemon = createAsyncThunk("pokedex/detail", async (id:number, thunkAPI)=>{
   const { pokedex } = thunkAPI.getState() as RootState;
   const pokemonFound = pokedex.cache.find(item => item.id=== id)
-  
+  console.log("cache ", pokedex.cache)
   if(pokemonFound)
     return pokemonFound
 
   const response = await detail(id);
+  console.log("found ", response)
   return response;
 },)
 
@@ -35,21 +36,24 @@ export const pokedexSlice = createSlice({
   reducers: {
     findById: (state, action: PayloadAction<Pokemon>) => {
       const pokemonFound = state.cache.find(item => item.id=== action.payload.id)
-      state.pokemon = pokemonFound;
+      state.pokemonDetail = pokemonFound;
     },
   },
   extraReducers: ((builder)=>{
     builder.addCase(getDetailPokemon.fulfilled, (state, action)=>{
-      const datail = action.payload;
-      if(state.cache.findIndex(item => item.id === datail.id)===-1)state.cache.push(datail)
+      const detail = action.payload;
+      if(state.cache.findIndex(item => item.id === detail.id)===-1)state.cache.push(detail)
+      state.pokemonDetail = action.payload;
       state.loading = false;
     })
     builder.addCase(getDetailPokemon.pending, (state)=>{
       state.loading = true;
+      state.pokemonDetail = undefined;
       state.error= undefined;
     })
     builder.addCase(getDetailPokemon.rejected, (state)=>{
       state.loading = false;
+      state.pokemonDetail = undefined;
     })
   })
 })
