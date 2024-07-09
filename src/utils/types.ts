@@ -1,3 +1,8 @@
+export type PokemonRequestParams ={
+    limit?: number,
+    offset?: number
+}
+
 export interface PokemonResponseApi {
     count: number
     next: string
