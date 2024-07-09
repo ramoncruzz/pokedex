@@ -1,6 +1,7 @@
-import { Button, Text } from '@rneui/base';
+import { Button } from '@rneui/base';
 import React, { useEffect } from 'react';
 import {SafeAreaView} from 'react-native';
+import { List } from '../../components'
 import usePokemon from '../../hooks/usePokemon';
 
 const Home = () =>{
@@ -8,7 +9,7 @@ const Home = () =>{
 
     return (
     <SafeAreaView style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-        <Text>quatidade {wildPokemons.length}</Text>
+        <List data={wildPokemons} />
         <Button title="Load Pokemons" onPress={()=>loadPokemons()}/>
     </SafeAreaView>)
 }
