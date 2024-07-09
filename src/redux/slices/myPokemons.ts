@@ -1,6 +1,7 @@
 import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit'
 import { search } from "../../services/poke.api";
 import {  PokemonItem, PokemonRequestParams } from '../../utils/types'
+import  type { RootState } from '../store';
 
 export interface MyPokemonState {
   pokemons: PokemonItem[],
@@ -19,8 +20,8 @@ const initialState: MyPokemonState = {
 }
 
 export const fecthPokemons = createAsyncThunk("pokemons/search", async (params: PokemonRequestParams, thunkAPI)=>{
-   const { paramNextPage }= thunkAPI.getState() as MyPokemonState
-    const response = await search(paramNextPage || params);
+   const { pokemons }= thunkAPI.getState() as RootState
+    const response = await search(pokemons.paramNextPage || params);
   return response;
 },)
 
