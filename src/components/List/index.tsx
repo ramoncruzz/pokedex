@@ -1,5 +1,5 @@
-import React, { useCallback, useEffect, useRef, useState }  from 'react'
-import { FlatList, StyleSheet , TextInput} from 'react-native';
+import React, { useCallback, useEffect, useState }  from 'react'
+import { FlatList, StyleSheet } from 'react-native';
 import { SearchBar } from '@rneui/themed';
 import { PokemonItem } from '../../utils/types';
 import Cell from './cell'

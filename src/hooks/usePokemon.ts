@@ -1,4 +1,4 @@
-import { useCallback, useState } from 'react';
+import { useCallback } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fecthPokemons, capturePokemon } from '../redux/slices/myPokemons'
 import { getDetailPokemon } from '../redux/slices/pokedex'
