@@ -2,7 +2,7 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit';
 import { detail } from "../../services/poke.api";
 import { Pokemon } from '../../utils/types'
-
+import { RootState } from '../store';
 export interface PokeDexState {
   cache: Pokemon[],
   pokemon?: Pokemon,
@@ -18,12 +18,18 @@ const initialState: PokeDexState = {
   
 }
 
-export const findPokemonDetail = createAsyncThunk("pokedex/search", async (id:number, thunkAPI)=>{
+export const getDetailPokemon = createAsyncThunk("pokedex/detail", async (id:number, thunkAPI)=>{
+  const { pokedex } = thunkAPI.getState() as RootState;
+  const pokemonFound = pokedex.cache.find(item => item.id=== id)
+  
+  if(pokemonFound)
+    return pokemonFound
+
   const response = await detail(id);
   return response;
 },)
 
-export const counterSlice = createSlice({
+export const pokedexSlice = createSlice({
   name: 'pokedex',
   initialState,
   reducers: {
@@ -33,21 +39,21 @@ export const counterSlice = createSlice({
     },
   },
   extraReducers: ((builder)=>{
-    builder.addCase(findPokemonDetail.fulfilled, (state, action)=>{
+    builder.addCase(getDetailPokemon.fulfilled, (state, action)=>{
       const datail = action.payload;
       if(state.cache.findIndex(item => item.id === datail.id)===-1)state.cache.push(datail)
       state.loading = false;
     })
-    builder.addCase(findPokemonDetail.pending, (state)=>{
+    builder.addCase(getDetailPokemon.pending, (state)=>{
       state.loading = true;
       state.error= undefined;
     })
-    builder.addCase(findPokemonDetail.rejected, (state)=>{
+    builder.addCase(getDetailPokemon.rejected, (state)=>{
       state.loading = false;
     })
   })
 })
 
-export const {findById } = counterSlice.actions
+export const {findById } = pokedexSlice.actions
 
-export default counterSlice.reducer
+export default pokedexSlice.reducer

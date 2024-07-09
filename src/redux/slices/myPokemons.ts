@@ -1,9 +1,10 @@
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
+import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit'
 import { search } from "../../services/poke.api";
 import {  PokemonItem, PokemonRequestParams } from '../../utils/types'
 
 export interface MyPokemonState {
   pokemons: PokemonItem[],
+  myPokemons: PokemonItem[],
   loading: boolean,
   paramNextPage?: PokemonRequestParams,
   error?: string
@@ -11,23 +12,29 @@ export interface MyPokemonState {
 
 const initialState: MyPokemonState = {
   pokemons: [],
+  myPokemons: [],
   loading: false,
   error: undefined,
   
 }
 
-export const findPokemonDetail = createAsyncThunk("myPokemon", async (params: PokemonRequestParams, thunkAPI)=>{
+export const fecthPokemons = createAsyncThunk("pokemons/search", async (params: PokemonRequestParams, thunkAPI)=>{
    const { paramNextPage }= thunkAPI.getState() as MyPokemonState
     const response = await search(paramNextPage || params);
   return response;
 },)
 
-export const counterSlice = createSlice({
-  name: 'myPokemon',
+export const pokemonSlice = createSlice({
+  name: 'pokemons',
   initialState,
-  reducers: {},
+  reducers: {
+    capturePokemon : (state, action:PayloadAction<PokemonItem>)=>{
+        if(!state.myPokemons.find(item=> item.name === action.payload.name))
+            state.pokemons.push(action.payload)
+    }
+  },
   extraReducers: ((builder)=>{
-    builder.addCase(findPokemonDetail.fulfilled, (state, action)=>{
+    builder.addCase(fecthPokemons.fulfilled, (state, action)=>{
       
      const pokemonsInfoArray = action.payload.results;
      const ulrNext = action.payload.next;
@@ -45,15 +52,15 @@ export const counterSlice = createSlice({
       state.pokemons.push(...pokemonsInfoArray)
       state.loading = false;
     })
-    builder.addCase(findPokemonDetail.pending, (state)=>{
+    builder.addCase(fecthPokemons.pending, (state)=>{
       state.loading = true;
       state.error= undefined;
     })
-    builder.addCase(findPokemonDetail.rejected, (state)=>{
+    builder.addCase(fecthPokemons.rejected, (state)=>{
       state.loading = false;
     })
   })
 })
 
-
-export default counterSlice.reducer
+export const { capturePokemon } = pokemonSlice.actions; 
+export default pokemonSlice.reducer
