@@ -1,5 +1,6 @@
-import React, { useCallback }  from 'react'
-import { FlatList, StyleSheet } from 'react-native';
+import React, { useCallback, useEffect, useRef, useState }  from 'react'
+import { FlatList, StyleSheet , TextInput} from 'react-native';
+import { SearchBar } from '@rneui/themed';
 import { PokemonItem } from '../../utils/types';
 import Cell from './cell'
 import { colors } from '../../utils/colors';
@@ -11,18 +12,31 @@ type Props ={
     onViewDetails: (pokemonInfo: PokemonItem) => void,
     onCapture: (pokemonInfo: PokemonItem) => void,
     showMyPokemons?: boolean,
+    showSearchBar?: boolean
 }
 
 
-const ListComponent: React.FC<Props> = ({wild, inPokedex,showMyPokemons=false,loadPokemons, onViewDetails, onCapture}): React.JSX.Element => {
+const ListComponent: React.FC<Props> = ({wild, inPokedex,showMyPokemons=false, showSearchBar=false,loadPokemons, onViewDetails, onCapture}): React.JSX.Element => {
+    const [searchText , setSearchText] = useState<string>();
+    const [cache] = useState(showMyPokemons? inPokedex: wild);
+    const [filtered, setFiltered] = useState<PokemonItem[]>([])
 
     const findPokemonInPokedex = useCallback((pokemonInfo: PokemonItem)=>{
         const isCaptured = inPokedex.some(item => item.name === pokemonInfo.name && item.url === pokemonInfo.url);
         return isCaptured;
     },[inPokedex])
 
+    useEffect(()=>{
+        if(searchText){
+            const _filtered = cache.filter(item=> RegExp(searchText,"gi").test(item.name))
+            setFiltered(_filtered)
+        }
+    },[searchText]);
+
+
     return (
-    <FlatList style={Styles.main} data={showMyPokemons? inPokedex: wild}
+    <FlatList style={Styles.main} data={searchText ? filtered :  showMyPokemons?  inPokedex : wild}
+        ListHeaderComponent={showSearchBar ? <SearchBar lightTheme  value={searchText} placeholder="Type the pokemon's name here" onChangeText={setSearchText} /> :undefined}
         keyExtractor={({url})=> url } 
         renderItem={({ item })=> 
             <Cell pokemonInfo={item}
@@ -40,7 +54,7 @@ const Styles = StyleSheet.create({
     main: {
         flex:1, 
         width: '100%',
-        margin: 15,
+        marginBottom: 15,
         backgroundColor: colors.backgroundPrimary
     }
 })

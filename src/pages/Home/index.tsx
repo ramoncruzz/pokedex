@@ -19,6 +19,7 @@ const Home = () =>{
                 loadPokemons={loadPokemons}
                 onCapture={onCapture}
                 onViewDetails={onViewDetails}
+                showSearchBar
         />
 
      </SafeAreaView>)
