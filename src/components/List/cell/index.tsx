@@ -3,6 +3,7 @@ import { StyleSheet, View, Text } from 'react-native';
 import { Card, Icon } from '@rneui/themed';
 import { colors } from "../../../utils/colors"
 import { fonts } from "../../../utils/fonts"
+import { capitalizerFirstLetter } from '../../../utils/functions';
 type Props ={
     pokemonName: string
     
@@ -13,10 +14,10 @@ type Props ={
 const Cell: React.FC<Props> = ({pokemonName}): React.JSX.Element => {
 
     return (
-        <Card containerStyle={{flex: 1, backgroundColor: colors.backgroundPrimary}} > 
+        <Card containerStyle={{flex: 1, backgroundColor: colors.backgroundSecondary}} > 
             <View style= {Styles.main}>
                 <View style={Styles.titleContainer}>
-                    <Text style={Styles.title}>{pokemonName}</Text>
+                    <Text aria-expanded style={Styles.title}>{capitalizerFirstLetter(pokemonName)}</Text>
                 </View>
                 <View style={Styles.buttonContainer}>
                     <Icon raised size={20}
@@ -48,7 +49,9 @@ const Styles = StyleSheet.create({
     title: {
         fontSize: 30,
         fontFamily: fonts.fontFamilyPrimary,
-        color: colors.fontColorPrimary
+        color: colors.fontColorPrimary,
+        letterSpacing: 5 , 
+        
     },
     buttonContainer: {
         flex:1,

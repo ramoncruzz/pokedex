@@ -2,40 +2,16 @@
   "migIndex": 1,
   "data": [
     {
-      "path": "assets/fonts/FontAwesome.ttf",
-      "sha1": "13b1eab65a983c7a73bc7997c479d66943f7c6cb"
-    },
-    {
-      "path": "assets/fonts/FontAwesome5_Brands.ttf",
-      "sha1": "3fa2d67cef22da5c3f3eb5730c6afbd6fecf0372"
-    },
-    {
-      "path": "assets/fonts/FontAwesome5_Regular.ttf",
-      "sha1": "7d849a3981a716e2ba4a84634bc57d0b8054a6a3"
-    },
-    {
-      "path": "assets/fonts/FontAwesome5_Solid.ttf",
-      "sha1": "c1b9fae262f42868c075ac865a8ab34920e20a2c"
-    },
-    {
-      "path": "assets/fonts/FontAwesome6_Brands.ttf",
-      "sha1": "d8b3568e9d8a1d3c01c85520eb9ca0b49b72815d"
-    },
-    {
-      "path": "assets/fonts/FontAwesome6_Regular.ttf",
-      "sha1": "2d7890e12afb77490112ec57fe47ca0688aebda2"
-    },
-    {
-      "path": "assets/fonts/FontAwesome6_Solid.ttf",
-      "sha1": "e9ace557c3aa403307f1e7a2cef1c035d522b94b"
-    },
-    {
       "path": "assets/fonts/Pokemon Hollow.ttf",
       "sha1": "2a4481d7e4002cd8de39c379a52fc5496f7ccfc0"
     },
     {
       "path": "assets/fonts/Pokemon Solid.ttf",
       "sha1": "6b80c3e28f39c9a0a769a73311f1038151672cc2"
+    },
+    {
+      "path": "assets/fonts/anna.ttf",
+      "sha1": "d6ffa1fae264a4714498e34e073ce40244dce513"
     }
   ]
 }

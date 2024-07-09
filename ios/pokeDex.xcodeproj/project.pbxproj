@@ -17,6 +17,7 @@
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		973D4E755E02FA5CF75A5EA8 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = D2453560A0CD7819C7BD577F /* PrivacyInfo.xcprivacy */; };
 		D597BAACEADE494FBC70D324 /* Pokemon Solid.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A53BC2CBF300414491B7A2A2 /* Pokemon Solid.ttf */; };
+		46A872DC852B449F8B87A32C /* anna.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 375424ADDA8E46A691593183 /* anna.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,23 +42,17 @@
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = pokeDex/main.m; sourceTree = "<group>"; };
 		13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = PrivacyInfo.xcprivacy; path = pokeDex/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		19F6CBCC0A4E27FBF8BF4A61 /* libPods-pokeDex-pokeDexTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-pokeDex-pokeDexTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		299DA0CD699C412AA2DD634A /* FontAwesome5_Brands.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Brands.ttf; path = ../assets/fonts/FontAwesome5_Brands.ttf; sourceTree = "<group>"; };
 		3B4392A12AC88292D35C810B /* Pods-pokeDex.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pokeDex.debug.xcconfig"; path = "Target Support Files/Pods-pokeDex/Pods-pokeDex.debug.xcconfig"; sourceTree = "<group>"; };
-		3FDD4DCC165547DBBE77D473 /* FontAwesome.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome.ttf; path = ../assets/fonts/FontAwesome.ttf; sourceTree = "<group>"; };
 		5709B34CF0A7D63546082F79 /* Pods-pokeDex.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pokeDex.release.xcconfig"; path = "Target Support Files/Pods-pokeDex/Pods-pokeDex.release.xcconfig"; sourceTree = "<group>"; };
 		5B7EB9410499542E8C5724F5 /* Pods-pokeDex-pokeDexTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pokeDex-pokeDexTests.debug.xcconfig"; path = "Target Support Files/Pods-pokeDex-pokeDexTests/Pods-pokeDex-pokeDexTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5DCACB8F33CDC322A6C60F78 /* libPods-pokeDex.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-pokeDex.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = pokeDex/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-pokeDex-pokeDexTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pokeDex-pokeDexTests.release.xcconfig"; path = "Target Support Files/Pods-pokeDex-pokeDexTests/Pods-pokeDex-pokeDexTests.release.xcconfig"; sourceTree = "<group>"; };
-		8A8ED842DE9F4A4F9ED0F5B8 /* FontAwesome5_Solid.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Solid.ttf; path = ../assets/fonts/FontAwesome5_Solid.ttf; sourceTree = "<group>"; };
-		8F18BBAC90614A04BF2123DF /* FontAwesome6_Brands.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome6_Brands.ttf; path = ../assets/fonts/FontAwesome6_Brands.ttf; sourceTree = "<group>"; };
 		A53BC2CBF300414491B7A2A2 /* Pokemon Solid.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Pokemon Solid.ttf"; path = "../assets/fonts/Pokemon Solid.ttf"; sourceTree = "<group>"; };
 		B0B05E7E964A424D9D143024 /* Pokemon Hollow.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Pokemon Hollow.ttf"; path = "../assets/fonts/Pokemon Hollow.ttf"; sourceTree = "<group>"; };
 		D2453560A0CD7819C7BD577F /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xml; name = PrivacyInfo.xcprivacy; path = pokeDex/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		F34106E5F36B49B0B87E10BF /* FontAwesome5_Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Regular.ttf; path = ../assets/fonts/FontAwesome5_Regular.ttf; sourceTree = "<group>"; };
-		F3F22ED91F7C401FA6AF3C14 /* FontAwesome6_Solid.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome6_Solid.ttf; path = ../assets/fonts/FontAwesome6_Solid.ttf; sourceTree = "<group>"; };
-		F615E366991F4E8495E05802 /* FontAwesome6_Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome6_Regular.ttf; path = ../assets/fonts/FontAwesome6_Regular.ttf; sourceTree = "<group>"; };
+		375424ADDA8E46A691593183 /* anna.ttf */ = {isa = PBXFileReference; name = "anna.ttf"; path = "../assets/fonts/anna.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,13 +122,7 @@
 			children = (
 				B0B05E7E964A424D9D143024 /* Pokemon Hollow.ttf */,
 				A53BC2CBF300414491B7A2A2 /* Pokemon Solid.ttf */,
-				3FDD4DCC165547DBBE77D473 /* FontAwesome.ttf */,
-				299DA0CD699C412AA2DD634A /* FontAwesome5_Brands.ttf */,
-				F34106E5F36B49B0B87E10BF /* FontAwesome5_Regular.ttf */,
-				8A8ED842DE9F4A4F9ED0F5B8 /* FontAwesome5_Solid.ttf */,
-				8F18BBAC90614A04BF2123DF /* FontAwesome6_Brands.ttf */,
-				F615E366991F4E8495E05802 /* FontAwesome6_Regular.ttf */,
-				F3F22ED91F7C401FA6AF3C14 /* FontAwesome6_Solid.ttf */,
+				375424ADDA8E46A691593183 /* anna.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -279,6 +268,7 @@
 				973D4E755E02FA5CF75A5EA8 /* PrivacyInfo.xcprivacy in Resources */,
 				1F02393F13DC462590677386 /* Pokemon Hollow.ttf in Resources */,
 				D597BAACEADE494FBC70D324 /* Pokemon Solid.ttf in Resources */,
+				46A872DC852B449F8B87A32C /* anna.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
