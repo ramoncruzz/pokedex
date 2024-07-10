@@ -1,79 +1,60 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# pokeDex
 
-# Getting Started
+PokeDex é um projeto simples onde são aplicados conceitos importantes no desenvolvimento de aplicativos com React Native.
+Neste projeto você encontrará:
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+- Hearder customizado nas configurações de rotas de navegação;
+- Hook customizado implementado considerando o princípio 'separetion of concerns' do SOLID;
+- Páginas/telas com baixo acoplamento;
+- Aplicação de gerenciamento de contexto com a ferramenta Redux-toolkit;
+- Arquitetura em camadas;
 
-## Step 1: Start the Metro Server
+Espero que você goste.
 
-First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
+## Arquitetura
 
-To start Metro, run the following command from the _root_ of your React Native project:
+Este projeto foi implementando com TypeScript e para prover a melhor organização possível, o `PokeDex` está organizado nos seguintes diretórios:
+[`components`](./src/components):
 
-```bash
-# using npm
-npm start
+> Contém a implementação dos componentes visuais.
+> Uma melhoria que pode ser feita é a aplicação do conceito 'Atomic Design', por prover uma bom compartilhamento do pensamento de reusabilidade com o time de UX/Design.
 
-# OR using Yarn
-yarn start
-```
+[`src/hooks`](./src/hooks).
 
-## Step 2: Start your Application
+> Neste diretorio está presente o Hook Customizado usePokemon. Ele é um exemplo prático da Separação de Responsábilidades. Neste projeto, usePokemon é responsável por obter os dados fornecidos pela central única da verdade.
+> Ele realiza processamentos a serem consumidos por telas e componentes visuais, é possível notar que ele possui um comportamento de Controlador. Há algo similar em arquiteturas MVC.
 
-Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
+[`src/routes`](./src/routes).
 
-### For Android
+> Neste diretório estão as configurações de navegação do App, bem como uma customização de Header. Este projeto usa a lib `react-native-navigation` por ser uma lib consolidada e com amplo suporte a Hooks.
 
-```bash
-# using npm
-npm run android
+[`src/pages`](./src/pages).
 
-# OR using Yarn
-yarn android
-```
+> Neste diretório estão presentes as Telas: Home, Detail e Pokedex.
 
-### For iOS
+[`src/services`](./src/services).
 
-```bash
-# using npm
-npm run ios
+> Este é um dos diretórios fundamentais neste projeto, ele contem os arquivos: (i) `poke.service.ts` - Responsável por prover uma instância axios contectada ao dominio `pokeapi.co`. ; (ii)`poke.api.ts` - Responsável pelo mapeamento das rotas utilizadas.
 
-# OR using Yarn
-yarn ios
-```
+[`src/util`](./src/util).
 
-If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
+> Este diretorio contém utilizarios importantes no projeto, como tipagem, constantes de cores, funções comuns e constantes de texto.
 
-This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
+## Dependências
 
-## Step 3: Modifying your App
+Este projeto contém as seguintes dependências:
 
-Now that you have successfully run the app, let's modify it.
+- React Navigation 6.x
+- Axios
+- React Native Elements
+- Redux toolkit
 
-1. Open `App.tsx` in your text editor of choice and edit some lines.
-2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
+## Instação e execução
 
-   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
+## Como executar este projeto
 
-## Congratulations! :tada:
+Clone o projeto `git clone -b chore/afterTime https://github.com/ramoncruzz/catinder/tree/chore/afterTime`
 
-You've successfully run and modified your React Native App. :partying_face:
+e execute isto no terminal: `yarn install`, `cd ios/`, `pod install`, `cd ..`
 
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+> [ios]: `yarn ios` > [android]: `yarn android`
