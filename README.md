@@ -53,7 +53,7 @@ Este projeto contém as seguintes dependências:
 
 ## Como executar este projeto
 
-Clone o projeto `git clone -b chore/afterTime https://github.com/ramoncruzz/catinder/tree/chore/afterTime`
+Clone o projeto `git clone git@github.com:ramoncruzz/pokedex.git`
 
 e execute isto no terminal: `yarn install`, `cd ios/`, `pod install`, `cd ..`
 
