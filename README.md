@@ -58,3 +58,11 @@ Clone o projeto `git clone git@github.com:ramoncruzz/pokedex.git`
 e execute isto no terminal: `yarn install`, `cd ios/`, `pod install`, `cd ..`
 
 > [ios]: `yarn ios` > [android]: `yarn android`
+
+## Screenshots
+![simulator_screenshot_2849CF90-3129-4FDC-BD93-5E455E8FC2C7](https://github.com/ramoncruzz/pokedex/assets/30701603/3b480041-22bf-497c-bb36-520d3a019f58) 
+![simulator_screenshot_782EB978-A532-4B11-B832-30EAB9BECE46](https://github.com/ramoncruzz/pokedex/assets/30701603/69574426-b5f2-422a-834e-e329cb7e177e)
+![simulator_screenshot_C4392CB5-1C1E-4916-B8BB-46B80670D895](https://github.com/ramoncruzz/pokedex/assets/30701603/d46941f9-1f98-470a-9f7d-701b0d7fcfa2)
+
+
+
